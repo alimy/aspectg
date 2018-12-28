@@ -16,6 +16,11 @@ type ProceedingJoinPoint interface {
 // PointCut used in tag JoinPoint
 type PointCut func()
 
+// Aspect used in Build to obtain rules
+type Aspect interface {
+	Aspect() interface{}
+}
+
 // Advisor define aspect code
 type Advisor interface {
 	OnAdvisor(JoinPoint)
