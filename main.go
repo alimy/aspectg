@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/alimy/aspectg/cmd"
+	_ "github.com/alimy/aspectg/module/build/cmd"
 	_ "github.com/alimy/aspectg/version"
 )
 

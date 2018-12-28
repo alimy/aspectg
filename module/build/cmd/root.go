@@ -20,6 +20,6 @@ func init() {
 }
 
 func buildRun(cmd *cobra.Command, args []string) {
-	logus.InProduction()
+	logus.InDevelopment()
 	build.StartBuild()
 }
