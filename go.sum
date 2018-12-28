@@ -1,7 +1,7 @@
 github.com/alimy/aspectg/cmd v0.0.0-20181228015746-991f7bdc5185 h1:zTVY3k34Ur6S/Gt23paBgKZ9Y1aygIVpT+LgoYkKfqc=
 github.com/alimy/aspectg/cmd v0.0.0-20181228015746-991f7bdc5185/go.mod h1:dXRJDOhSAgSwHirISdMp2VD/lVm3YgoCIsQmDGUMc7Y=
-github.com/alimy/aspectg/module/build v0.0.0-20181228023207-c5afc3773bcb h1:uuEkqX9zv5Cw33EIWqMgN7fgFqMBex2UXmSerRPTQs8=
-github.com/alimy/aspectg/module/build v0.0.0-20181228023207-c5afc3773bcb/go.mod h1:F20BGsHYZS2GcWcOwpf7SvAFYfGdUUbzWv+9657++3s=
+github.com/alimy/aspectg/module/build v0.0.0-20181228023711-d703b2322397 h1:aEWkmwCaMwJLnrJU8HZLGgCruzfiH56mQCoB/Wh3yrg=
+github.com/alimy/aspectg/module/build v0.0.0-20181228023711-d703b2322397/go.mod h1:F20BGsHYZS2GcWcOwpf7SvAFYfGdUUbzWv+9657++3s=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
