@@ -1,5 +1,5 @@
-# aspectg
-AOP for golang just a fun now.
+# AspectG
+AspectG auto build AOP code for golang.(Inspiration from [wire](https://github.com/google/wire) and [AspectJ](https://www.eclipse.org/aspectj/))
 
 ### Usage
 ```$bash
