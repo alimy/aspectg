@@ -15,19 +15,19 @@ type PointCut func()
 
 // Advisor define aspect code
 type Advisor interface {
-	OnAdvisor(JoinPoint)
+	OnAdvisor(point JoinPoint, args ...interface{})
 }
-
-// AdvisorFunc used convert func(...) to Advisor
-type AdvisorFunc func(JoinPoint)
-
-// AdvisorFunc used convert func(...) to ProceedingAdvisor
-type ProceedingAdvisorFunc func(ProceedingJoinPoint)
 
 // ProceedingAdvisor define aspect code
 type ProceedingAdvisor interface {
-	OnProceedingAdvisor(ProceedingJoinPoint)
+	OnProceedingAdvisor(point ProceedingJoinPoint, args ...interface{})
 }
+
+// AdvisorFunc used convert func(...) to Advisor
+type AdvisorFunc func(point JoinPoint, args ...interface{})
+
+// AdvisorFunc used convert func(...) to ProceedingAdvisor
+type ProceedingAdvisorFunc func(point ProceedingJoinPoint, args ...interface{})
 
 // Proceed invoke ProceedingJoinPoint's method
 func (p *ProceedingJoinPoint) Proceed() {
@@ -35,11 +35,11 @@ func (p *ProceedingJoinPoint) Proceed() {
 }
 
 // OnAdvisor implement Advisor interface
-func (f AdvisorFunc) OnAdvisor(jp JoinPoint) {
-	f(jp)
+func (f AdvisorFunc) OnAdvisor(point JoinPoint, args ...interface{}) {
+	f(point, args...)
 }
 
 // OnProceedingAdvisor implement ProceedingAdvisor interface
-func (f ProceedingAdvisorFunc) OnProceedingAdvisor(jp ProceedingJoinPoint) {
-	f(jp)
+func (f ProceedingAdvisorFunc) OnProceedingAdvisor(pint ProceedingJoinPoint, args ...interface{}) {
+	f(pint, args...)
 }
