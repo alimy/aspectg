@@ -12,7 +12,7 @@ type Audience struct {
 	WatchPerformance  ProceedingAdvisor `aspect:"ModulePerformance(),Around"`
 	TakeSeats         Advisor           `aspect:"Performance(),Before"`
 	Applause          Advisor           `aspect:"Performance(),AfterReturning"`
-	DemandRefund      Advisor           `aspect:"Performance,AfterPanic"`
+	DemandRefund      Advisor           `aspect:"Performance(),AfterPanic"`
 	GoAway            Advisor           `aspect:"execution(.../concert.Performance.Perform(...)),After"`
 }
 
