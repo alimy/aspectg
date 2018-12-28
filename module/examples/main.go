@@ -1,3 +1,5 @@
+//+build !AspectG
+
 package main
 
 import "github.com/alimy/aspectg/module/examples/concert"
