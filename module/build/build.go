@@ -4,5 +4,5 @@ import "github.com/unisx/logus"
 
 func StartBuild() {
 	// TODO
-	logus.Debug("Do Nothing Now!")
+	logus.Warn("Do Nothing Now!")
 }
