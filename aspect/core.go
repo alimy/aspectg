@@ -1,12 +1,15 @@
 package aspect
 
 // JoinPoint a point that used in Advisor
-type JoinPoint struct {
+type JoinPoint interface {
+	Args() map[string]interface{} // return point argument slice
 	// TODO
 }
 
 // ProceedingJoinPoint a point that  used in ProceedingAdvisor
-type ProceedingJoinPoint struct {
+type ProceedingJoinPoint interface {
+	JoinPoint
+	Proceed() // Proceed invoke ProceedingJoinPoint's method
 	// TODO
 }
 
@@ -15,31 +18,26 @@ type PointCut func()
 
 // Advisor define aspect code
 type Advisor interface {
-	OnAdvisor(point JoinPoint, args ...interface{})
+	OnAdvisor(JoinPoint)
 }
 
 // ProceedingAdvisor define aspect code
 type ProceedingAdvisor interface {
-	OnProceedingAdvisor(point ProceedingJoinPoint, args ...interface{})
+	OnProceedingAdvisor(ProceedingJoinPoint)
 }
 
 // AdvisorFunc used convert func(...) to Advisor
-type AdvisorFunc func(point JoinPoint, args ...interface{})
+type AdvisorFunc func(JoinPoint)
 
 // AdvisorFunc used convert func(...) to ProceedingAdvisor
-type ProceedingAdvisorFunc func(point ProceedingJoinPoint, args ...interface{})
-
-// Proceed invoke ProceedingJoinPoint's method
-func (p *ProceedingJoinPoint) Proceed() {
-	// TODO
-}
+type ProceedingAdvisorFunc func(ProceedingJoinPoint)
 
 // OnAdvisor implement Advisor interface
-func (f AdvisorFunc) OnAdvisor(point JoinPoint, args ...interface{}) {
-	f(point, args...)
+func (f AdvisorFunc) OnAdvisor(jp JoinPoint) {
+	f(jp)
 }
 
 // OnProceedingAdvisor implement ProceedingAdvisor interface
-func (f ProceedingAdvisorFunc) OnProceedingAdvisor(pint ProceedingJoinPoint, args ...interface{}) {
-	f(pint, args...)
+func (f ProceedingAdvisorFunc) OnProceedingAdvisor(jp ProceedingJoinPoint) {
+	f(jp)
 }
