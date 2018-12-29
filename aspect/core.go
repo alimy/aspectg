@@ -18,7 +18,7 @@ type PointCut func()
 
 // Aspect used in Build to obtain rules
 type Aspect interface {
-	Aspect() interface{}
+	AspectOf() interface{}
 }
 
 // Advisor define aspect code
