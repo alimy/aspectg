@@ -19,8 +19,8 @@ func (t *TrackCounter) countTrack(jp JoinPoint) {
 	}
 }
 
-// Aspect make a aspect rules instance
-func (t *TrackCounter) Aspect() interface{} {
+// AspectOf make a aspect rules instance
+func (t *TrackCounter) AspectOf() interface{} {
 	t.CountTrack = AdvisorFunc(t.countTrack)
 	return t
 }

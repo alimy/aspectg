@@ -54,8 +54,8 @@ func (a *Audience) goAway(jp JoinPoint) {
 	// TODO
 }
 
-// Advisor make a aspect rules instance
-func (a *Audience) Aspect() interface{} {
+// AspectOf make a aspect rules instance
+func (a *Audience) AspectOf() interface{} {
 	a.WatchPerformance = ProceedingAdvisorFunc(a.watchPerformance)
 	a.TakeSeats = AdvisorFunc(a.takeSeats)
 	a.Applause = AdvisorFunc(a.applause)
